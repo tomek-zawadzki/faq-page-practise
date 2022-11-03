@@ -36,6 +36,19 @@ main {
 .question {
   margin-bottom: 44px;
 }
+
+.question__sentence {
+  width: 100%;
+  cursor: pointer;
+  position: relative;
+}
+
+.question__sentence::after {
+  content: "+";
+  position: absolute;
+  right: 5px;
+}
+
 .question__div {
   display: flex;
   justify-content: space-between;
@@ -45,6 +58,10 @@ main {
 
 .question__answer {
   padding-top: 12px;
+
+  height: 0px;
+  overflow: hidden;
+  transition: 0.5s;
 }
 
 .plus,
@@ -54,7 +71,24 @@ main {
   cursor: pointer;
   font-size: 20px;
 }
-
+/* 
 .hidden {
   display: none;
+} */
+
+/* JS styling link */
+
+.question__answer.active {
+  height: 150px;
+}
+
+.question__answer.active {
+  font-size: 18px;
+  transition: 0.5s;
+}
+
+.question__sentence.active .question__sentence::after {
+  content: "-";
+  font-size: 30px;
+  transition: 0.5s;
 }
